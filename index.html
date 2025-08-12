@@ -1,18 +1,130 @@
-        .="=.
-      _/.-.-.\_
-     ( ( o o ) )
-      |/  "  \|
-       \ --- /
-       /`"""`\
-      /       \
-     /  /\_/\  \
-    (  /     \  )
-     \/|     |\/
-       | o o |
-       |  >  |
-       |_____|
-      /|     |\
-     (_|     |_)
-        |   |
-        |___|
-       (_/ \_)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information Dashboard</title>
+    <script src="index.js" defer></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #666;
+            flex: 1;
+        }
+        .info-value {
+            flex: 2;
+            text-align: right;
+            color: #333;
+            word-break: break-all;
+        }
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+        .error {
+            color: #d32f2f;
+            font-style: italic;
+        }
+        .json-display {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 12px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Client Information Dashboard</h1>
+    
+    <div class="container">
+        <h2>📍 Network Information</h2>
+        <div id="networkInfo">
+            <div class="loading">Loading network information...</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>🖥️ Browser Information</h2>
+        <div id="browserInfo">
+            <div class="loading">Loading browser information...</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>💻 System Information</h2>
+        <div id="systemInfo">
+            <div class="loading">Loading system information...</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>📱 Device Information</h2>
+        <div id="deviceInfo">
+            <div class="loading">Loading device information...</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>🌐 Connection Information</h2>
+        <div id="connectionInfo">
+            <div class="loading">Loading connection information...</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>🔧 Feature Support</h2>
+        <div id="featureInfo">
+            <div class="loading">Loading feature support information...</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>📊 Raw Data (JSON)</h2>
+        <div id="rawData" class="json-display">
+            Loading...
+        </div>
+    </div>
+</body>
+</html>
